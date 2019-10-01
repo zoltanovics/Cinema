@@ -15,7 +15,7 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 - legyen lehetőség jegyet foglalni regisztrált felhasználóként
 - legyen lehetőség foglalás törlésére regisztrált felhasználóként
 ### SQL táblák:
-
+![database_plan](https://github.com/zoltanovics/Cinema/blob/master/adatbazis_terv.png)
 
 ## Nem funkcionális követelmények:
  - a regisztrálatlan felhasználók nem férnek hozzá a regisztrált felhasználók és adminok adataihoz, a jegyek és kuponok rejtve vannak előle
