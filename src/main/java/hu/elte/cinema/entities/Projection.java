@@ -5,12 +5,15 @@
  */
 package hu.elte.cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,16 +35,30 @@ public class Projection implements Serializable {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
-  @Column
-  @NotNull
+  @ManyToOne
+  @JoinColumn  
+  @JsonIgnore
   private Movie movie;
   
-  @Column
-  @NotNull
+  @ManyToOne
+  @JoinColumn  
+  @JsonIgnore
   private Room room;
   
   @Column
   @NotNull
-  private Date date;
-
+  private Date projectionDate;
+  
+  public Movie getMovie() {
+      return movie;
+  }
+  
+  public Room getRoom() {
+      return room;
+  }
+  
+  public Date getProjectionDate() {
+      return projectionDate;
+  }
+  
 }

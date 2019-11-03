@@ -5,7 +5,7 @@
  */
 package hu.elte.cinema.repositories;
 
-import hu.elte.cinema.entities.User;
+import hu.elte.cinema.entities.Users;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author Bíró Zoltán
  */
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer> {
-    User findByName(String name);
+public interface UserRepository extends CrudRepository<Users, Integer> {
+    Users findByName(String name);
 }

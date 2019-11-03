@@ -6,10 +6,13 @@
 package hu.elte.cinema.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,8 +42,27 @@ public class Movie implements Serializable {
   @NotNull
   private String genre;
   
-  @Column
+  @Column(length = 1000)
   @NotNull
   private String description;
-
+  
+  @OneToMany(mappedBy = "movie")
+  private List<Projection> projections;
+  
+  public String getName() {
+      return name;
+  }
+  
+  public String getGenre() {
+      return genre;
+  }
+  
+  public String getDescription() {
+      return description;
+  }
+  
+  public List<Projection> getProjection() {
+      return projections;
+  }
+  
 }

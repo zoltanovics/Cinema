@@ -6,12 +6,14 @@
 package hu.elte.cinema.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +29,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Room implements Serializable {
+public class Users implements Serializable {
 
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,22 +41,46 @@ public class Room implements Serializable {
 
     @Column
     @NotNull
-    private Integer size;
+    private String password;
 
-    @OneToMany(mappedBy = "room")
-    private List<Projection> projections;
+    @Column
+    @NotNull
+    private String email;
 
-    public Room(String name, Integer size) {
-        this.name = name;
-        this.size = size;
-    }
+    @ManyToMany
+    @JoinTable
+    private List<Projection> tickets;
     
-    public Integer getSize() {
-        return size;
+    @ManyToMany
+    @JoinTable
+    private List<Coupon> coupons;
+    
+    public Users(String name,String password,String email) {
+        coupons = new ArrayList<>();
+        tickets = new ArrayList<>();
+        this.name = name;
+        this.password = password;
+        this.email = email;
     }
     
     public String getName() {
         return name;
     }
-
+    
+    public String getPassword() {
+        return password;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public List<Projection> getTickets() {
+        return tickets;
+    }
+    public List<Coupon> getCoupons() {
+        return coupons;
+    }
+    
+    
 }

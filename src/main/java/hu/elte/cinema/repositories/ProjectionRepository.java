@@ -5,8 +5,10 @@
  */
 package hu.elte.cinema.repositories;
 
+import hu.elte.cinema.entities.Movie;
 import hu.elte.cinema.entities.Projection;
-import hu.elte.cinema.entities.Room;
+import java.util.Date;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

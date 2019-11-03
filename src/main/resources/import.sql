@@ -1,10 +1,15 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  bzolt
- * Created: 2019.10.22.
- */
+insert into Coupon(id, name, description) values(1,'Diák','50% kedvezmény');
+insert into Coupon(id, name, description) values(2,'Dolgozó','75% kedvezmény');
 
+insert into Movie(id, name,genre,description) values(1,'Joker','Thriller', 'Nem volt még őrültebb, veszélyesebb és viccesebb antihős a képregényvilágban. De hogyan lett Jokerből Joker, a komor Batman örök ellensége és ellentéte? Ez a történet megmutatja, miképpen válhat egy ártatlan lúzerből világok felforgatója, hadseregek legyőzője és szuperhősök esélyes ellenfele');
+insert into Movie(id, name,genre,description) values(2,'Volt egyszer egy Hollywood','Dráma', '1969, Los Angeles. Egy munka nélkül maradt, western tévésorozatából kikerült, munkanélküli színész (Leonardo DiCaprio) és jó barátja, kaszkadőre (Brad Pitt) együtt próbálnak boldogulni Hollywood kegyetlen világában.');
+
+insert into Room(id, name,size) values(1,'1-es szoba', 120);
+insert into Room(id, name,size) values(2,'2-es szoba', 150);
+insert into Room(id, name,size) values(3,'3-as szoba', 100);
+
+insert into Users(id, name,password,email) values(1,'Bíró Zoltán','jelszo12','b.zoltan1999@gmail.com');
+insert into Users(id, name,password,email) values(2,'Béres Anita','password','b.anita@gmail.com');
+
+insert into Projection(id,movie,room,date) values();
+insert into Projection(id,movie,room,date) values();

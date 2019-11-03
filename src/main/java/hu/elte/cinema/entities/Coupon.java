@@ -6,10 +6,13 @@
 package hu.elte.cinema.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,23 +23,39 @@ import lombok.NoArgsConstructor;
  *
  * @author Bíró Zoltán
  */
-
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Coupon implements Serializable {
-  @javax.persistence.Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id;
 
-  @Column(unique = true)
-  @NotNull
-  private String name;
-  
-  @Column
-  @NotNull
-  private String description;
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @Column(unique = true)
+    @NotNull
+    private String name;
+
+    @Column
+    @NotNull
+    private String description;
+
+    @ManyToMany
+    @JoinTable
+    private List<Users> users;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<Users> getUsers() {
+        return users;
+    }
 
 }
