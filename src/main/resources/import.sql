@@ -11,5 +11,5 @@ insert into Room(id, name,size) values(3,'3-as szoba', 100);
 insert into Users(id, name,password,email) values(1,'Bíró Zoltán','jelszo12','b.zoltan1999@gmail.com');
 insert into Users(id, name,password,email) values(2,'Béres Anita','password','b.anita@gmail.com');
 
-insert into Projection(id,movie,room,date) values();
-insert into Projection(id,movie,room,date) values();
+insert into Projection(id,movie_id,room_id,projection_date) values(1,1,1,TO_DATE('2019.10.21','YYYY.MM.DD'));
+insert into Projection(id,movie_id,room_id,projection_date) values(2,2,2,TO_DATE('2019.10.15','YYYY.MM.DD'));
