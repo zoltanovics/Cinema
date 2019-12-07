@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Users implements Serializable {
+public class User implements Serializable {
 
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,7 +55,7 @@ public class Users implements Serializable {
     @JoinTable
     private List<Coupon> coupons;
     
-    public Users(String name,String password,String email) {
+    public User(String name,String password,String email) {
         coupons = new ArrayList<>();
         tickets = new ArrayList<>();
         this.name = name;

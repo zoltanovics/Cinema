@@ -6,7 +6,7 @@
 package hu.elte.cinema.controllers;
 
 import hu.elte.cinema.entities.Room;
-import hu.elte.cinema.entities.Users;
+import hu.elte.cinema.entities.User;
 import hu.elte.cinema.repositories.RoomRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

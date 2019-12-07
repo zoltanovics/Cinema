@@ -42,20 +42,12 @@ public class Coupon implements Serializable {
     @NotNull
     private String description;
 
-    @ManyToMany
-    @JoinTable
-    private List<Users> users;
-
     public String getName() {
         return name;
     }
 
     public String getDescription() {
         return description;
-    }
-
-    public List<Users> getUsers() {
-        return users;
     }
 
 }
