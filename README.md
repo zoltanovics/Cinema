@@ -40,9 +40,8 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
  - animációs film: a megjelenítés az animáció eszközével történik, változó témájú 
  
 ### Kuponfajták:
-- féláron: a jegy ára feleződik, a felhasználó akkor kapja meg, ha az admin adott neki hozzásférést (nem online zajló játékok során kaphatja meg)
-- gyerek jegy: a jegy ára a normál jegy 25 százaléka
-- csoportos: az összes jegy ára a jegyek összegének árának a 75 százaléka, csak akkor elérhető, ha a felhasználó minimum 20 jegyet vesz
+- diák: a jegy ára feleződik, a felhasználó akkor kapja meg, ha az admin adott neki hozzásférést (nem online zajló játékok során kaphatja meg)
+- gyerek: a jegy ára a normál jegy 25 százaléka
 
 ## Használati eset diagram:
 ![use_case_diagram](https://github.com/zoltanovics/Cinema/blob/backend/dia2.jpg)
