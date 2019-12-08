@@ -5,11 +5,13 @@
  */
 package hu.elte.cinema.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
@@ -30,19 +32,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Projection implements Serializable {
   @javax.persistence.Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
   @ManyToOne
-  @JoinColumn  
-  @JsonIgnore
+  @JoinColumn(name="movie_id")
   private Movie movie;
   
   @ManyToOne
-  @JoinColumn  
-  @JsonIgnore
+  @JoinColumn(name="room_id")
   private Room room;
   
   @Column
