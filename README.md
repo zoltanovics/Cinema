@@ -80,3 +80,17 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
      - `entites` : entitek
      - `controlles` : kontrollerek
  - `test/java/hu/elte/cinema` :generált teszt
+ 
+## Felhasználói dokumentáció:
+- Telepítés: lásd Fejlesztőkörnyezet felállítása
+- Indítás: az npm start kiadása után töltsd be a böngészőben az oldalt
+### Regisztráció, bejelentkezés:
+A jobb felső sarokba lévő `Regisztráció` gombra kattintva egy űrlap kitöltése után tudunk tagokká válni, és lehetőségünk van helyet foglalni vagy jegyet venni. A regisztrációhoz név, emailcím és jelszó kell. Ha már regisztrált felhasználók vagyunk a `Regisztráció` melletti `Bejelentkezés` gombbal tudunk bejelentkezni. 
+### Műfajokra szűrés, filmek böngészése:
+A `Filmek` oldalon található fülek segítségével fogunk tudni a különböző műfajú filmekre rászűrni. Alapértelmezetten az összes filmet kilistázó `Minden` fül van kiválasztva, mellette lesznek a különboző típusok.
+### Szobák megtekintése:
+A `Filmek` oldat mellett ki tudjuk választani a `Szobák` oldalt, ahol a mozi különböző termei lesznek kilistázva mérettel együtt. Ezeket módosítani, hozzáadni csak az adminoknak lesz lehetőségük.
+### Vetítések:
+A `Filmek` mellett ki tudjuk választani a `Vetítések` oldalt, ahol a különboző filmekkel összekapcsolt időpontok lesznek kilistázva. Ezekre kattintva megkapjuk a részleteket, melyek tartalmazni fogják a szabad helyeket is. Itt lesz lehetőség a regisztrált felhasználóknak venni jegyet vagy helyet foglalni az adott dátumra.
+### Kuponok szerkesztése:
+Csak az adminok számára látható a `Kuponok` oldal, melyen a kuponok lesznek kilistázva. Ezek szerkeszthetőek, törölhetőek lesznek, és hozzá is lehet majd adni új kupont. 
