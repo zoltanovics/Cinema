@@ -90,7 +90,8 @@ A jobb felső sarokba lévő `Regisztráció` gombra kattintva egy űrlap kitöl
 A `Filmek` oldalon található fülek segítségével fogunk tudni a különböző műfajú filmekre rászűrni. Alapértelmezetten az összes filmet kilistázó `Minden` fül van kiválasztva, mellette lesznek a különboző típusok.
 ### Szobák megtekintése:
 A `Filmek` oldat mellett ki tudjuk választani a `Szobák` oldalt, ahol a mozi különböző termei lesznek kilistázva mérettel együtt. Ezeket módosítani, hozzáadni csak az adminoknak lesz lehetőségük.
-### Vetítések:
+### Vetítések listázása, jegyvásárlás, hely foglalása:
 A `Filmek` mellett ki tudjuk választani a `Vetítések` oldalt, ahol a különboző filmekkel összekapcsolt időpontok lesznek kilistázva. Ezekre kattintva megkapjuk a részleteket, melyek tartalmazni fogják a szabad helyeket is. Itt lesz lehetőség a regisztrált felhasználóknak venni jegyet vagy helyet foglalni az adott dátumra.
 ### Kuponok szerkesztése:
 Csak az adminok számára látható a `Kuponok` oldal, melyen a kuponok lesznek kilistázva. Ezek szerkeszthetőek, törölhetőek lesznek, és hozzá is lehet majd adni új kupont. 
+
