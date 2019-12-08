@@ -77,7 +77,7 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
    - `resources` : app által felhasznált egyéb fájlok 
    - `java/hu/elte/cinema` :  gyökér mappa
      - `repositories` : repozitorik
-     - `entites` : entitek
+     - `entites` : entitik
      - `controlles` : kontrollerek
  - `test/java/hu/elte/cinema` :generált teszt
  
@@ -95,3 +95,5 @@ A `Filmek` mellett ki tudjuk választani a `Vetítések` oldalt, ahol a különb
 ### Kuponok szerkesztése:
 Csak az adminok számára látható a `Kuponok` oldal, melyen a kuponok lesznek kilistázva. Ezek szerkeszthetőek, törölhetőek lesznek, és hozzá is lehet majd adni új kupont. 
 
+# Példa (szoba módosítása):
+Rákattintunk a szobák fülre, utána valamely szoba sorára ismét kattintunk, ezután átírhatjuk a létszámot vagy a szoba nevét, ha ezt megtettük, akkor a `Save room` gombra kattintunk, az meghívja a `RoomController.java` `put` függvényét, ami elmenti az adatbázisba a módosításokat. Végül a módosított adatokat láthatjuk az oldalon.
