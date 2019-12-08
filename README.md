@@ -74,9 +74,9 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 - `cinema-client`: kliens helye
 - `src`: forrás fájlok
  - `main` : fő forrás mappa
-  - `resources` : app által felhasznált egyéb fájlok 
-  - `java/hu/elte/cinema` :  gyökér mappa
-   - `repositories` : repozitorik
-   - `entites` : entitek
-   - `controlles` : kontrollerek
+   - `resources` : app által felhasznált egyéb fájlok 
+   - `java/hu/elte/cinema` :  gyökér mappa
+     - `repositories` : repozitorik
+     - `entites` : entitek
+     - `controlles` : kontrollerek
  - `test/java/hu/elte/cinema` :generált teszt
