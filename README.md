@@ -44,7 +44,7 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 - gyerek: a jegy ára a normál jegy 25 százaléka
 
 ## Használati eset diagram:
-![use_case_diagram](https://github.com/zoltanovics/Cinema/blob/backend/dia2.jpg)
+![use_case_diagram](https://github.com/zoltanovics/Cinema/blob/master/dia.jpg)
 
 ## Implementáció:
 
