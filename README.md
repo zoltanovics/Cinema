@@ -68,3 +68,15 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 6. Projekt fordítása és futtatása (Netbeansből)
 7. A kliens mappájában függőségek telepítése `npm install`
 8. App indítása `npm start`
+
+### Könyvtárstrúktúra:
+- `mvn`: Maven általgenerált wrapper
+- `cinema-client`: kliens helye
+- `src`: forrás fájlok
+ - `main` : fő forrás mappa
+  - `resources` : app által felhasznált egyéb fájlok 
+  - `java/hu/elte/cinema` :  gyökér mappa
+   - `repositories` : repozitorik
+   - `entites` : entitek
+   - `controlles` : kontrollerek
+ - `test/java/hu/elte/cinema` :generált teszt
