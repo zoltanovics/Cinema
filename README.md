@@ -44,7 +44,7 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 - gyerek: a jegy ára a normál jegy 25 százaléka
 
 ## Használati eset diagram:
-![use_case_diagram](https://github.com/zoltanovics/Cinema/blob/backend/dia2.jpg)
+![use_case_diagram](https://github.com/zoltanovics/Cinema/blob/master/dia.jpg)
 
 ## Implementáció:
 
@@ -56,10 +56,44 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 - [Angular](https://angular.io/) keretrendszer
 - [Spring Boot](https://spring.io/projects/spring-boot) keretrendszer
 - [Node.js](https://nodejs.org/en/) Javascript környezet
+- [H2 adatbázis](https://www.h2database.com/html/main.html)
 
 #### Fejlesztőkörnyezet felállítása:
 1. [Git](https://git-scm.com/) verziókezelő telepítése
  [Github](https://github.com/)-on való regisztráció ajánlott
 2. [Node.js](https://nodejs.org/en/) környezet telepítése
-3. Projekt klónozása lokális gépre: git clone https://github.com/zoltanovics/Cinema.git
-4. 
+3. Projekt klónozása lokális gépre: `git clone https://github.com/zoltanovics/Cinema.git`
+4. Kliens klónozása a gépre: `git clone https://github.com/zoltanovics/cinema-client.git`
+5. [H2 adatbázis](https://www.h2database.com/html/main.html) letöltése
+6. Projekt fordítása és futtatása (Netbeansből)
+7. A kliens mappájában függőségek telepítése `npm install`
+8. App indítása `npm start`
+
+### Könyvtárstrúktúra:
+- `mvn`: Maven általgenerált wrapper
+- `cinema-client`: kliens helye
+- `src`: forrás fájlok
+ - `main` : fő forrás mappa
+   - `resources` : app által felhasznált egyéb fájlok 
+   - `java/hu/elte/cinema` :  gyökér mappa
+     - `repositories` : repozitorik
+     - `entites` : entitik
+     - `controlles` : kontrollerek
+ - `test/java/hu/elte/cinema` :generált teszt
+ 
+## Felhasználói dokumentáció:
+- Telepítés: lásd Fejlesztőkörnyezet felállítása
+- Indítás: az npm start kiadása után töltsd be a böngészőben az oldalt
+### Regisztráció, bejelentkezés:
+A jobb felső sarokba lévő `Regisztráció` gombra kattintva egy űrlap kitöltése után tudunk tagokká válni, és lehetőségünk van helyet foglalni vagy jegyet venni. A regisztrációhoz név, emailcím és jelszó kell. Ha már regisztrált felhasználók vagyunk a `Regisztráció` melletti `Bejelentkezés` gombbal tudunk bejelentkezni. 
+### Műfajokra szűrés, filmek böngészése:
+A `Filmek` oldalon található fülek segítségével fogunk tudni a különböző műfajú filmekre rászűrni. Alapértelmezetten az összes filmet kilistázó `Minden` fül van kiválasztva, mellette lesznek a különboző típusok.
+### Szobák megtekintése:
+A `Filmek` oldat mellett ki tudjuk választani a `Szobák` oldalt, ahol a mozi különböző termei lesznek kilistázva mérettel együtt. Ezeket módosítani, hozzáadni csak az adminoknak lesz lehetőségük.
+### Vetítések listázása, jegyvásárlás, hely foglalása:
+A `Filmek` mellett ki tudjuk választani a `Vetítések` oldalt, ahol a különboző filmekkel összekapcsolt időpontok lesznek kilistázva. Ezekre kattintva megkapjuk a részleteket, melyek tartalmazni fogják a szabad helyeket is. Itt lesz lehetőség a regisztrált felhasználóknak venni jegyet vagy helyet foglalni az adott dátumra.
+### Kuponok szerkesztése:
+Csak az adminok számára látható a `Kuponok` oldal, melyen a kuponok lesznek kilistázva. Ezek szerkeszthetőek, törölhetőek lesznek, és hozzá is lehet majd adni új kupont. 
+
+# Példa (szoba módosítása):
+Rákattintunk a szobák fülre, utána valamely szoba sorára ismét kattintunk, ezután átírhatjuk a létszámot vagy a szoba nevét, ha ezt megtettük, akkor a `Save room` gombra kattintunk, az meghívja a `RoomController.java` `put` függvényét, ami elmenti az adatbázisba a módosításokat. Végül a módosított adatokat láthatjuk az oldalon.
