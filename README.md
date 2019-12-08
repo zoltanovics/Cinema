@@ -66,3 +66,6 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 3. Kliens klónozása a gépre: `git clone https://github.com/zoltanovics/cinema-client.git`
 4. Projekt klónozása lokális gépre: `git clone https://github.com/zoltanovics/Cinema.git`
 5. [H2 adatbázis](https://www.h2database.com/html/main.html) letöltése
+6. Projekt fordítása és futtatása (Netbeansből)
+7. A kliens mappájában függőségek telepítése `npm install`
+8. App indítása `npm start`
