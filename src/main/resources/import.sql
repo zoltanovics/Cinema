@@ -1,5 +1,5 @@
 insert into Coupon(id, name, description) values(1,'Diák','50% kedvezmény');
-insert into Coupon(id, name, description) values(2,'Dolgozó','75% kedvezmény');
+insert into Coupon(id, name, description) values(2,'Gyerek','75% kedvezmény');
 
 insert into Movie(id, name,genre,description) values(1,'Joker','Thriller', 'Nem volt még őrültebb, veszélyesebb és viccesebb antihős a képregényvilágban. De hogyan lett Jokerből Joker, a komor Batman örök ellensége és ellentéte? Ez a történet megmutatja, miképpen válhat egy ártatlan lúzerből világok felforgatója, hadseregek legyőzője és szuperhősök esélyes ellenfele');
 insert into Movie(id, name,genre,description) values(2,'Volt egyszer egy Hollywood','Dráma', '1969, Los Angeles. Egy munka nélkül maradt, western tévésorozatából kikerült, munkanélküli színész (Leonardo DiCaprio) és jó barátja, kaszkadőre (Brad Pitt) együtt próbálnak boldogulni Hollywood kegyetlen világában.');
