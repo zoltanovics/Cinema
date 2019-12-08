@@ -43,3 +43,24 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
 - féláron: a jegy ára feleződik, a felhasználó akkor kapja meg, ha az admin adott neki hozzásférést (nem online zajló játékok során kaphatja meg)
 - gyerek jegy: a jegy ára a normál jegy 25 százaléka
 - csoportos: az összes jegy ára a jegyek összegének árának a 75 százaléka, csak akkor elérhető, ha a felhasználó minimum 20 jegyet vesz
+
+## Használati eset diagram:
+![use_case_diagram](https://github.com/zoltanovics/Cinema/blob/backend/dia2.jpg)
+
+## Implementáció:
+
+### Fejlesztőkörnyezet:
+
+#### Felhasznált eszközök:
+- [Git](https://git-scm.com/) verziókezelő
+- [Github](https://github.com/) a projekt közzétételéhez
+- [Angular](https://angular.io/) keretrendszer
+- [Spring Boot](https://spring.io/projects/spring-boot) keretrendszer
+- [Node.js](https://nodejs.org/en/) Javascript környezet
+
+#### Fejlesztőkörnyezet felállítása:
+1. [Git](https://git-scm.com/) verziókezelő telepítése
+ [Github](https://github.com/)-on való regisztráció ajánlott
+2. [Node.js](https://nodejs.org/en/) környezet telepítése
+3. Projekt klónozása lokális gépre: git clone https://github.com/zoltanovics/Cinema.git
+4. 
