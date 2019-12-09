@@ -5,8 +5,13 @@
  */
 package hu.elte.cinema.controllers;
 
+import hu.elte.cinema.dto.ProjectionDTO;
+import hu.elte.cinema.entities.Movie;
 import hu.elte.cinema.entities.Projection;
+import hu.elte.cinema.entities.Room;
+import hu.elte.cinema.repositories.MovieRepository;
 import hu.elte.cinema.repositories.ProjectionRepository;
+import hu.elte.cinema.repositories.RoomRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +36,12 @@ public class ProjectionController {
 
     @Autowired
     private ProjectionRepository projectionRepository;
+    
+    @Autowired
+    private RoomRepository roomRepository;
+    
+    @Autowired
+    private MovieRepository movieRepository;
 
     @GetMapping("")
     public ResponseEntity<Iterable<Projection>> getAll() {
@@ -54,9 +65,15 @@ public class ProjectionController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Projection> put(@RequestBody Projection projection, @PathVariable Integer id) {
-        Optional<Projection> oProjection = projectionRepository.findById(id);
-        if (oProjection.isPresent()) {
+    public ResponseEntity<Projection> put(@RequestBody ProjectionDTO projectionDTO, @PathVariable Integer id) {
+        Optional<Projection> oProjection = projectionRepository.findById(projectionDTO.getId());
+        Optional<Room> oRoom = roomRepository.findById(projectionDTO.getRoom()); 
+        Optional<Movie> oMovie = movieRepository.findById(projectionDTO.getMovie());
+        if (oProjection.isPresent()) { 
+            Projection projection = new Projection();
+            projection.setRoom(oRoom.get());
+            projection.setMovie(oMovie.get());
+            projection.setProjectionDate(projectionDTO.getProjectionDate());
             projection.setId(id);
             return ResponseEntity.ok(projectionRepository.save(projection));
         } else {

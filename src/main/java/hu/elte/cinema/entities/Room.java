@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -44,7 +45,7 @@ public class Room implements Serializable {
     @NotNull
     private Integer size;
 
-    @OneToMany(mappedBy = "room")
+    @OneToMany(mappedBy = "room",cascade = CascadeType.ALL)
     private List<Projection> projections;
 
     public Room(String name, Integer size) {

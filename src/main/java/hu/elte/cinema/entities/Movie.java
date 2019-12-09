@@ -13,6 +13,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
@@ -50,7 +51,7 @@ public class Movie implements Serializable {
   @NotNull
   private String description;
   
-  @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
   private List<Projection> projections;
   
   public String getName() {

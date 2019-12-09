@@ -9,8 +9,10 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,11 +40,11 @@ public class Projection implements Serializable {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name="movie_id")
   private Movie movie;
   
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name="room_id")
   private Room room;
   
