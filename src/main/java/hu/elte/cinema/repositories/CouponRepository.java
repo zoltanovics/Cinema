@@ -6,6 +6,7 @@
 package hu.elte.cinema.repositories;
 
 import hu.elte.cinema.entities.Coupon;
+import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface CouponRepository extends CrudRepository<Coupon, Integer> {
-    Coupon findByName(String name);
+    Optional<Coupon> findByName(String name);
 }

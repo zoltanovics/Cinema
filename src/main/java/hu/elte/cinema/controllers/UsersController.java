@@ -50,6 +50,23 @@ public class UsersController {
         }
     }
 
+    @PostMapping("/{id}/addCoupon/{couponName}")
+    public ResponseEntity<User> post(@PathVariable Integer id, @PathVariable String couponName) {
+        Optional<Coupon> oCoupon = couponRepository.findByName(couponName);
+        Optional<User> oUser = userRepository.findById(id);
+        if (oCoupon.isPresent()) {
+            Coupon coupon = oCoupon.get();
+            coupon.setId(oCoupon.get().getId());
+            User user = oUser.get();
+            user.getCoupons().add(coupon);
+            user.setId(oUser.get().getId());
+            ResponseEntity.ok(couponRepository.save(coupon));
+            return ResponseEntity.ok(userRepository.save(user));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    
     @PostMapping("")
     public ResponseEntity<User> post(@RequestBody User user) {
         User savedUser = userRepository.save(user);
@@ -67,17 +84,4 @@ public class UsersController {
         }
     } 
     
-    @PutMapping("/{id}/addCoupon")
-    public ResponseEntity<User> addCoupon(@RequestBody Coupon coupon, @PathVariable Integer id) {
-        Optional<User> oUser = userRepository.findById(id);
-        Optional<Coupon> oCoupon = couponRepository.findById(coupon.getId());
-        if (oUser.isPresent() && oCoupon.isPresent()) {
-            User user = oUser.get();
-            user.setId(id);
-            return ResponseEntity.ok(userRepository.save(user));
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
 }
