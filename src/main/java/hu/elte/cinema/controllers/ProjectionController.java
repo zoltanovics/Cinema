@@ -9,9 +9,11 @@ import hu.elte.cinema.dto.ProjectionDTO;
 import hu.elte.cinema.entities.Movie;
 import hu.elte.cinema.entities.Projection;
 import hu.elte.cinema.entities.Room;
+import hu.elte.cinema.entities.User;
 import hu.elte.cinema.repositories.MovieRepository;
 import hu.elte.cinema.repositories.ProjectionRepository;
 import hu.elte.cinema.repositories.RoomRepository;
+import hu.elte.cinema.repositories.UserRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -42,6 +44,9 @@ public class ProjectionController {
 
     @Autowired
     private MovieRepository movieRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("")
     public ResponseEntity<Iterable<Projection>> getAll() {
@@ -69,6 +74,23 @@ public class ProjectionController {
         projection.setId(projectionDTO.getId());
         Projection savedProjection = projectionRepository.save(projection);
         return ResponseEntity.ok(savedProjection);
+    }
+    
+    @PostMapping("/reservation/{projectionId}/{name}")
+    public ResponseEntity<Projection> post(@PathVariable Integer projectionId, @PathVariable String name) {
+        Optional<Projection> oProjection = projectionRepository.findById(projectionId);
+        Optional<User> oUser = userRepository.findByName(name);
+        if (oProjection.isPresent()) {
+            Projection projection = oProjection.get();
+            projection.setId(oProjection.get().getId());
+            User user = oUser.get();
+            user.getTickets().add(projection);
+            user.setId(oUser.get().getId());
+            ResponseEntity.ok(userRepository.save(user));
+            return ResponseEntity.ok(projectionRepository.save(projection));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/{id}")
