@@ -5,8 +5,8 @@
  */
 package hu.elte.cinema.entities;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -30,7 +30,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+@JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE)
 public class Room implements Serializable {
 
     @javax.persistence.Id
@@ -44,9 +44,6 @@ public class Room implements Serializable {
     @Column
     @NotNull
     private Integer size;
-
-    @OneToMany(mappedBy = "room",cascade = CascadeType.ALL)
-    private List<Projection> projections;
 
     public Room(String name, Integer size) {
         this.name = name;

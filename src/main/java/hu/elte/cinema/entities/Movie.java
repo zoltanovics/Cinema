@@ -5,15 +5,13 @@
  */
 package hu.elte.cinema.entities;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
@@ -33,7 +31,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+@JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE)
 public class Movie implements Serializable {
   @javax.persistence.Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,9 +49,6 @@ public class Movie implements Serializable {
   @NotNull
   private String description;
   
-  @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-  private List<Projection> projections;
-  
   public String getName() {
       return name;
   }
@@ -66,8 +61,5 @@ public class Movie implements Serializable {
       return description;
   }
   
-  public List<Projection> getProjection() {
-      return projections;
-  }
   
 }

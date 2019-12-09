@@ -36,10 +36,10 @@ public class ProjectionController {
 
     @Autowired
     private ProjectionRepository projectionRepository;
-    
+
     @Autowired
     private RoomRepository roomRepository;
-    
+
     @Autowired
     private MovieRepository movieRepository;
 
@@ -59,7 +59,14 @@ public class ProjectionController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Projection> post(@RequestBody Projection projection) {
+    public ResponseEntity<Projection> post(@RequestBody ProjectionDTO projectionDTO) {
+        Optional<Room> oRoom = roomRepository.findById(projectionDTO.getRoom());
+        Optional<Movie> oMovie = movieRepository.findById(projectionDTO.getMovie());
+        Projection projection = new Projection();
+        projection.setRoom(oRoom.get());
+        projection.setMovie(oMovie.get());
+        projection.setProjectionDate(projectionDTO.getProjectionDate());
+        projection.setId(projectionDTO.getId());
         Projection savedProjection = projectionRepository.save(projection);
         return ResponseEntity.ok(savedProjection);
     }
@@ -67,9 +74,9 @@ public class ProjectionController {
     @PutMapping("/{id}")
     public ResponseEntity<Projection> put(@RequestBody ProjectionDTO projectionDTO, @PathVariable Integer id) {
         Optional<Projection> oProjection = projectionRepository.findById(projectionDTO.getId());
-        Optional<Room> oRoom = roomRepository.findById(projectionDTO.getRoom()); 
+        Optional<Room> oRoom = roomRepository.findById(projectionDTO.getRoom());
         Optional<Movie> oMovie = movieRepository.findById(projectionDTO.getMovie());
-        if (oProjection.isPresent()) { 
+        if (oProjection.isPresent()) {
             Projection projection = new Projection();
             projection.setRoom(oRoom.get());
             projection.setMovie(oMovie.get());
@@ -80,7 +87,7 @@ public class ProjectionController {
             return ResponseEntity.notFound().build();
         }
     }
-    
+
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable Integer id) {
         Optional<Projection> oProjection = projectionRepository.findById(id);
