@@ -32,12 +32,8 @@ A webalkalmazás egy mozi online foglalórendszerét valósítja meg. Foglalhatu
  - room: olyan tábla, mely a termeket és a méretüket tárolja.
 
 ### Filmműfajok:
- - akciófilm: hagyományosan megtalálhatók robbanások, ökölharcok, lövöldözések, lovas és/vagy autós üldözések, agresszív jelenetek, nem megengedett 12 éven aluliak számára
- - fantasy: mítikus, képzeletbeli helyszíneken játszódó hősi kalandokat mesél el, emberfeletti, kitalált vagy földöntúli figurák főszereplésével, adott esetben mitológiai alakok feldolgozásával
- - horror: félelem- és borzalomérzetet kiváltó jelenetekkel van tele, adott eseben komikus vagy természet feletti helyzeteket dolgoz fel, nem megengedett 18 éven aluliak számára
- - romantikus: a kibontakozó vagy megújuló szerelmet két ember kapcsolatán keresztül mutatja be
- - vígjáték: a világot és szereplőket komikus helyzeteken keresztül mutatja be, ezzel a nézőt nevetésre ösztönözve
- - animációs film: a megjelenítés az animáció eszközével történik, változó témájú 
+ - thriller: Többnyire igaz a műfaj szereplőire, hogy megéreznek egy bizonyos bajt, ami fenyegeti őket, de sokáig nem szembesülnek azzal – ahogy a néző sem –, ezzel jön létre a kívánt feszültség, izgalom a nézőben.
+ - dráma: A filmdráma realisztikus szereplőket, helyszíneket, történéseket mutat be. Története erőteljes, a főszereplők átalakulnak benne, a közöttük meglévő vagy kialakuló kapcsolatok erősek és gyakran éles fordulatot vesznek. Lehetnek konfliktusok a főszereplők között, de egyetlen főszereplő is vívódhat önmagával. Előfordul a természettel való konfliktus is, amikor a szereplők életveszélyes helyzetekbe kerülnek. A filmdráma a főszereplők legjobb és legrosszabb tulajdonságait mutatja meg, kiélezett szituációkban.
  
 ### Kuponfajták:
 - diák: a jegy ára feleződik, a felhasználó akkor kapja meg, ha az admin adott neki hozzásférést (nem online zajló játékok során kaphatja meg)
