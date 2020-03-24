@@ -10,5 +10,6 @@ package hu.elte.cinema.controllers;
  * @author bzolt
  */
 public class test2 {
-    
+    int a;
+    int b;
 }
